@@ -18,6 +18,7 @@
         "noPropertyAccessFromIndexSignature": false,
         "baseUrl": ".",
         "paths": {
+            "~functions": ["src/functions/index.ts"],
             "~utils": ["src/utils/index.ts"]
         }
     },

@@ -1,5 +1,5 @@
+import { readFileByDay, reportSolution } from '~utils'
 import {
-    apply,
     converge,
     count,
     equals,
@@ -13,10 +13,12 @@ import {
     sum,
     transpose,
     trim,
-    zip,
+    zipWith,
 } from 'ramda'
-import { readFileByDay, reportSolution } from '~utils'
 import { EOL } from 'node:os'
+import { absoluteDifference } from '~functions'
+
+const input = readFileByDay('01', false)
 
 const lists = pipe(
     trim,
@@ -24,12 +26,11 @@ const lists = pipe(
     map(split(/\s+/)),
     transpose,
     map(map(parseInt)),
-)(readFileByDay('01', true))
+)(input)
 
 const task1 = pipe(
-    map(sort((a: number, b: number) => a - b)),
-    converge(zip, [head, last]),
-    map(pipe(apply(subtract), Math.abs)),
+    map(sort(subtract)),
+    converge(zipWith(absoluteDifference), [head, last]),
     sum,
 )(lists)
 
