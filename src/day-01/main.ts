@@ -1,4 +1,4 @@
-import { readFileByDay, reportSolution } from '~utils'
+import { EOL } from 'node:os'
 import {
     converge,
     count,
@@ -15,8 +15,8 @@ import {
     trim,
     zipWith,
 } from 'ramda'
-import { EOL } from 'node:os'
 import { absoluteDifference } from '~functions'
+import { readFileByDay, reportSolution } from '~utils'
 
 const input = readFileByDay('01', false)
 
