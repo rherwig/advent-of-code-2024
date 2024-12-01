@@ -6,6 +6,7 @@
     "scripts": {
         "format": "prettier --write \"src/**/*.ts\"",
         "lint": "eslint src/",
+        "test": "node --test --experimental-strip-types",
         "day-01": "tsx ./src/day-01/main.ts"
     },
     "devDependencies": {
