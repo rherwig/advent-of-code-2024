@@ -1,15 +1,25 @@
-# advent-of-code-2024
+# Advent of Code 2024
 
-To install dependencies:
+This repository contains the solution attempts for the [Advent of Code 2024](https://adventofcode.com/).
+The solutions are written in TypeScript, using the functional programming library [Ramda](https://ramdajs.com/docs).
 
+## Development
+
+Install dependencies via:
 ```bash
-bun install
+pnpm install
 ```
 
-To run:
-
+Run the code of an individual day by:
 ```bash
-bun run index.ts
+pnpm day-xx
 ```
 
-This project was created using `bun init` in bun v1.1.38. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Where `xx` is the day number (including leading zero).
+
+## Solutions
+
+- [Day 01](src/day-01/main.ts)
+
+## License
+MIT
