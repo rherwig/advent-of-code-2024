@@ -20,6 +20,7 @@ Where `xx` is the day number (including leading zero).
 ## Solutions
 
 - [Day 01](src/day-01/main.ts)
+- [Day 02](src/day-02/main.ts)
 
 ## License
 MIT
