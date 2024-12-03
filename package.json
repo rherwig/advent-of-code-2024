@@ -8,7 +8,8 @@
         "lint": "eslint src/",
         "test": "node --test --experimental-strip-types",
         "day-01": "tsx ./src/day-01/main.ts",
-        "day-02": "tsx ./src/day-02/main.ts"
+        "day-02": "tsx ./src/day-02/main.ts",
+        "day-03": "tsx ./src/day-03/main.ts"
     },
     "devDependencies": {
         "@eslint/js": "9.16.0",

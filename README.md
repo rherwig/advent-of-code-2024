@@ -21,6 +21,7 @@ Where `xx` is the day number (including leading zero).
 
 - [Day 01](src/day-01/main.ts)
 - [Day 02](src/day-02/main.ts)
+- [Day 03](src/day-03/main.ts)
 
 ## License
 MIT
