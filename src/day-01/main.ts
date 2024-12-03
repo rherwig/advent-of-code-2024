@@ -14,11 +14,11 @@ import {
     transpose,
     trim,
     zipWith,
-} from 'ramda'
+} from 'rambda'
 import { absoluteDifference } from '~functions'
 import { readFileByDay, reportSolution } from '~utils'
 
-const input = readFileByDay('01', false)
+const input = readFileByDay('01', true)
 
 const lists = pipe(
     trim,

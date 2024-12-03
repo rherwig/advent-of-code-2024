@@ -10,10 +10,10 @@ import {
     includes,
     map,
     pipe,
-    remove,
+    removeIndex,
     split,
     trim,
-} from 'ramda'
+} from 'rambda'
 import { absoluteDifference, between, isSorted } from '~functions'
 import { readFileByDay, reportSolution } from '~utils'
 
@@ -29,16 +29,11 @@ const MIN_LEVEL_INCREMENT = 1
 const MAX_LEVEL_INCREMENT = 3
 
 /**
- * Splits a list into intersecting tuples.
- */
-const toTuples: (xs: number[]) => [number, number][] = aperture(2)
-
-/**
  * Returns true, if the delta between adjacent levels is at least MIN_LEVEL_INCREMENT
  * and at most MAX_LEVEL_INCREMENT.
  */
 const hasValidLevelIncrements = pipe(
-    toTuples,
+    aperture(2),
     map(apply(absoluteDifference)),
     all(between(MIN_LEVEL_INCREMENT, MAX_LEVEL_INCREMENT + 1)),
 )
@@ -56,15 +51,15 @@ const isReportSafe: (xs: number[]) => boolean = both(
  */
 const task1 = pipe(map(isReportSafe), count(equals(true)))(levelsList)
 
-const mapIndexed = addIndex<number>(map)
+const mapIndexed = addIndex(map)
 
 /**
  * Returns a boolean list of all levels inside a report, equaling true,
  * if removing the level would make the report safe.
  */
-const findRemovableLevels: (xs: number[]) => boolean[] = mapIndexed(
-    (_, index: number, xs: number[]) => {
-        return isReportSafe(remove(index, 1, xs))
+const findRemovableLevels = mapIndexed(
+    (_: number, index: number, xs: number[]) => {
+        return isReportSafe(removeIndex(index, xs))
     },
 )
 

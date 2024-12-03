@@ -1,4 +1,4 @@
-import { comparator, converge, equals, identity, or, sort } from 'ramda'
+import { comparator, converge, equals, identity, or, sort } from 'rambda'
 
 export const ascending = comparator((a: number, b: number) => a < b)
 export const descending = comparator((a: number, b: number) => b < a)
